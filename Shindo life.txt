@@ -1,4 +1,4 @@
-if game.PlaceId == 4616652839 then
+
 
 local ScreenGui = Instance.new("ScreenGui")
 local MainFrame = Instance.new("ImageLabel")
@@ -401,4 +401,4 @@ local function PTLA_fake_script() -- ImageButton.Button2Script
 end
 coroutine.wrap(PTLA_fake_script)()
 
-game.Players.LocalPlayer:kick("🤡 wrong game bozo 🤡")
+
