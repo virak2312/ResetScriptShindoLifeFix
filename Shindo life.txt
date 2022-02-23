@@ -1,4 +1,7 @@
+-- Gui to Lua
+-- Version: 3.2
 
+-- Instances:
 
 local ScreenGui = Instance.new("ScreenGui")
 local MainFrame = Instance.new("ImageLabel")
@@ -33,6 +36,8 @@ MainFrame.ImageColor3 = Color3.fromRGB(62, 172, 255)
 MainFrame.ScaleType = Enum.ScaleType.Slice
 MainFrame.SliceCenter = Rect.new(100, 100, 100, 100)
 MainFrame.SliceScale = 0.120
+MainFrame.Active = true
+MainFrame.Draggable = true
 
 ResetSpins.Name = "ResetSpins"
 ResetSpins.Parent = MainFrame
@@ -85,6 +90,13 @@ TextButton.Font = Enum.Font.GothamBold
 TextButton.Text = "How To Use"
 TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.TextSize = 14.000
+TextButton.MouseButton1Down:Connect(function()
+	if Frame.Visible == true then
+		Frame.Visible = false
+	else
+		Frame.Visible = true
+	end
+end)
 
 Frame.Parent = ScreenGui
 Frame.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
@@ -159,18 +171,34 @@ ImageButton.Position = UDim2.new(0.0104227755, 0, 0.915245235, 0)
 ImageButton.Size = UDim2.new(0, 51, 0, 48)
 ImageButton.Image = "rbxassetid://8911264433"
 ImageButton.ImageColor3 = Color3.fromRGB(212, 212, 212)
+ImageButton.MouseButton1Down:Connect(function()
+	if MainFrame.Visible == true then
+		MainFrame.Visible = false
+	else
+		MainFrame.Visible = true
+end
 
 UIAspectRatioConstraint_3.Parent = ImageButton
 
 -- Scripts:
 
-local function EQPGKE_fake_script() -- ScreenGui.LocalScript 
+local function UUIAZOT_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
+	
+	
 	game:GetService("Players").LocalPlayer.startevent:FireServer("band","\128")
+	
+	local sound = script.Parent.Clown
+	
+	while true do
+		local soundclone = sound
+		soundclone.Parent = workspace
+	end
+	
 end
-coroutine.wrap(EQPGKE_fake_script)()
-local function EFXRJKI_fake_script() -- ResetSpins.LocalScript 
+coroutine.wrap(UUIAZOT_fake_script)()
+local function GOJYTW_fake_script() -- ResetSpins.LocalScript 
 	local script = Instance.new('LocalScript', ResetSpins)
 
 	
@@ -187,8 +215,8 @@ local function EFXRJKI_fake_script() -- ResetSpins.LocalScript
 		ts:Teleport(game.PlaceId, p)
 	end)
 end
-coroutine.wrap(EFXRJKI_fake_script)()
-local function OMPZMAW_fake_script() -- ResetSpins.Button2Script 
+coroutine.wrap(GOJYTW_fake_script)()
+local function HPTN_fake_script() -- ResetSpins.Button2Script 
 	local script = Instance.new('LocalScript', ResetSpins)
 
 	local btn = script.Parent
@@ -231,8 +259,8 @@ local function OMPZMAW_fake_script() -- ResetSpins.Button2Script
 		end
 	end)
 end
-coroutine.wrap(OMPZMAW_fake_script)()
-local function XLOJCT_fake_script() -- ResetSpins_2.LocalScript 
+coroutine.wrap(HPTN_fake_script)()
+local function ALTKDXG_fake_script() -- ResetSpins_2.LocalScript 
 	local script = Instance.new('LocalScript', ResetSpins_2)
 
 	
@@ -243,8 +271,8 @@ local function XLOJCT_fake_script() -- ResetSpins_2.LocalScript
 		game:GetService("Players").LocalPlayer.startevent:FireServer("band","Eye")
 	end)
 end
-coroutine.wrap(XLOJCT_fake_script)()
-local function LBLMXD_fake_script() -- ResetSpins_2.Button2Script 
+coroutine.wrap(ALTKDXG_fake_script)()
+local function PBYHBGX_fake_script() -- ResetSpins_2.Button2Script 
 	local script = Instance.new('LocalScript', ResetSpins_2)
 
 	local btn = script.Parent
@@ -287,8 +315,8 @@ local function LBLMXD_fake_script() -- ResetSpins_2.Button2Script
 		end
 	end)
 end
-coroutine.wrap(LBLMXD_fake_script)()
-local function KIAOU_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(PBYHBGX_fake_script)()
+local function HFIHZ_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	local TextButton = script.Parent
@@ -305,8 +333,8 @@ local function KIAOU_fake_script() -- TextButton.LocalScript
 	
 	end)
 end
-coroutine.wrap(KIAOU_fake_script)()
-local function XFNS_fake_script() -- TextButton_2.LocalScript 
+coroutine.wrap(HFIHZ_fake_script)()
+local function OSFGOVR_fake_script() -- TextButton_2.LocalScript 
 	local script = Instance.new('LocalScript', TextButton_2)
 
 	local discord = "https://discord.gg/sZSySReAVM"
@@ -325,19 +353,8 @@ local function XFNS_fake_script() -- TextButton_2.LocalScript
 	end)
 	
 end
-coroutine.wrap(XFNS_fake_script)()
-local function IPQF_fake_script() -- ScreenGui.LocalScript 
-	local script = Instance.new('LocalScript', ScreenGui)
-
-			if game.PlaceId == 4616652839 then
-		end
-	
-	
-	if game.PlaceId == 4616652839 then
-	end
-end
-coroutine.wrap(IPQF_fake_script)()
-local function WYJDMYB_fake_script() -- ImageButton.LocalScript 
+coroutine.wrap(OSFGOVR_fake_script)()
+local function QROUQGT_fake_script() -- ImageButton.LocalScript 
 	local script = Instance.new('LocalScript', ImageButton)
 
 	local MainGui = script.Parent.Parent
@@ -355,8 +372,8 @@ local function WYJDMYB_fake_script() -- ImageButton.LocalScript
 	
 	end)
 end
-coroutine.wrap(WYJDMYB_fake_script)()
-local function PTLA_fake_script() -- ImageButton.Button2Script 
+coroutine.wrap(QROUQGT_fake_script)()
+local function PYEWOTQ_fake_script() -- ImageButton.Button2Script 
 	local script = Instance.new('LocalScript', ImageButton)
 
 	local btn = script.Parent
@@ -399,6 +416,5 @@ local function PTLA_fake_script() -- ImageButton.Button2Script
 		end
 	end)
 end
-coroutine.wrap(PTLA_fake_script)()
-
-
+coroutine.wrap(PYEWOTQ_fake_script)()
+end)
